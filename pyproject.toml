@@ -8,6 +8,8 @@ authors = ["Vik Borges <v1k@protonmail.com>"]
 python = "^3.7"
 click = "^7.0"
 numpy = "^1.18"
+pillow = "^6.2"
+tensorflow = "^2.0.0"
 
 [tool.poetry.dev-dependencies]
 
