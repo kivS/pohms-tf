@@ -16,10 +16,19 @@ def main_cli():
 
 
 @main_cli.command()
-def detect():
+@click.argument('img', type=click.Path())
+def detect(img):
     '''
         Detect if an image is a ceramic resistor or not
     '''
+
+    try:
+        image = Image.open(img)
+    except FileNotFoundError as error:
+        click.echo(error, err=True)
+        return
+    else:
+        click.echo('Starting detection...')
 
     # Disable scientific notation for clarity
     np.set_printoptions(suppress=True)
@@ -31,11 +40,6 @@ def detect():
     # The 'length' or number of images you can put into the array is
     # determined by the first position in the shape tuple, in this case 1.
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-
-    # Replace this with the path to your image
-    image = Image.open('./test_images/10.jpeg')
-
-    image.show()
 
     # Make sure to resize all images to 224, 224 otherwise they won't fit in the array
     image = image.resize((224, 224))
@@ -52,6 +56,8 @@ def detect():
     pred_result_label = LABELS[prediction.argmax()]
 
     pred_result_val = prediction.max()
+
+    image.show()
 
     click.echo(f'Image prediction: {pred_result_label}')
     click.echo(f'Prediction confidence: {pred_result_val}')
