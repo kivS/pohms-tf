@@ -7,6 +7,7 @@ authors = ["Vik Borges <v1k@protonmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 click = "^7.0"
+numpy = "^1.18"
 
 [tool.poetry.dev-dependencies]
 
