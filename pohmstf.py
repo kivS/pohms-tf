@@ -33,7 +33,6 @@ def detect(img):
     # Disable scientific notation for clarity
     np.set_printoptions(suppress=True)
 
-    # Load the model
     model = keras.models.load_model('./model/keras_model.h5')
 
     # Create the array of the right shape to feed into the keras model
@@ -53,6 +52,7 @@ def detect(img):
 
     prediction = model.predict(data)
 
+    # argmax gives us the index of the item with the highest val
     pred_result_label = LABELS[prediction.argmax()]
 
     pred_result_val = prediction.max()
