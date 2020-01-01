@@ -47,8 +47,6 @@ def detect():
     # run the inference
     prediction = model.predict(data)
 
-    # breakpoint()
-
     print(prediction)
 
 
