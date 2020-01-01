@@ -4,10 +4,13 @@ from PIL import Image
 import numpy as np
 
 
+LABELS = np.array(['ceramic-resistor', 'not-a-ceramic-resistor'])
+
+
 @click.group()
 def main_cli():
     '''
-        Ceramic-resistor/not-ceramic-resistor image dector
+        Ceramic-resistor/not-ceramic-resistor image detector
     '''
     pass
 
@@ -44,10 +47,14 @@ def detect():
     # Load the image into the array
     data[0] = normalized_image_array
 
-    # run the inference
     prediction = model.predict(data)
 
-    print(prediction)
+    pred_result_label = LABELS[prediction.argmax()]
+
+    pred_result_val = prediction.max()
+
+    click.echo(f'Image prediction: {pred_result_label}')
+    click.echo(f'Prediction confidence: {pred_result_val}')
 
 
 if __name__ == '__main__':
