@@ -15,7 +15,7 @@ Pohms - Image detector for ceramic resistor or not ceramic resistor
 	# example using venv
 	python -m venv ~/pyenvs/pohms-tf # the location of your virtualenv
 	
-	# active the virtualenv
+	# activate the virtualenv
 	source ~/pyenvs/pohms-tf/bin/activate # location of virtualenv
 	```
 
