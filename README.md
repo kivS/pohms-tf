@@ -33,6 +33,6 @@ Pohms - Image detector for ceramic resistor or not ceramic resistor
 
 
 - Example
-![execution example](./resources/execution.png)
+![execution example](./resources/example.png)
 
 
