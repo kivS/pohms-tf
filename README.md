@@ -1,14 +1,38 @@
-Pohms - Ceramic resistor or not detector
+Pohms - Image detector for ceramic resistor or not ceramic resistor
 
+## Requirements
+
+- Python 3.7
+- Pip
 
 ## Installation
+
+- Clone repo
 
 - Install python environment
 
 	```bash
-		# example using venv
-
+	# example using venv
+	python -m venv ~/pyenvs/pohms-tf # the location of your virtualenv
 	
+	# active the virtualenv
+	source ~/pyenvs/pohms-tf/bin/activate # location of virtualenv
 	```
 
-- Install python 
+- Install dependancies
+	```bash
+	 pip install -r requirements.txt
+	````
+
+## Usage
+
+- Pass an image to the detector 
+	```bash
+	python pohmstf.py detect path-to-image
+	```
+
+
+- Example
+![execution example](./resources/execution.png)
+
+
