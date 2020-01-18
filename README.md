@@ -1,4 +1,4 @@
-Pohms - Image detector for ceramic resistor or not ceramic resistor
+Pohms - Image detector for ceramic resistor or not 
 
 ## Requirements
 
